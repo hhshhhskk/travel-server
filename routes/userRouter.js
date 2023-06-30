@@ -2,15 +2,13 @@ const express = require('express');
 const router  = express.Router();
 const db = require('../config/database');
 
-// 
-router.get('/', (req, res) => {
-  // res.send('Error');
-  db.query('select * from member', function (err, rows) {
-      if(err){
-        console.log(err);
-      }
-      console.log(rows);
-      // res.json(rows);
+// 회원정보
+router.post('/info', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  const { id } = req.body;
+  db.query(`select id, name from member WHERE id = "${id}"`, function (err, rows) {
+      // console.log(rows);
+      res.json(rows);
     });
 });
 
