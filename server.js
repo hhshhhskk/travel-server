@@ -1,7 +1,9 @@
 const express    = require('express');
 const cors       = require("cors");
 const bodyParser = require('body-parser');
-const app        = express();
+const app = express();
+
+const rootRouter = require('./routes/index');
 
 app.use(cors({
   origin: "*",                // 출처 허용 옵션
@@ -16,7 +18,8 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 })
 
-app.use("/user", require("./routes/userRouter"));
+// app.use("/user", require("./routes/userRouter"));
+app.use("/", rootRouter);
 
 app.listen(8080, () => {
     console.log("server start")
