@@ -3,12 +3,12 @@ const router  = express.Router();
 const apiUserInfoRouter = require('./userinfo/index');
 const apiSignUpRouter = require('./signup/index');
 const apiLoginRouter = require('./login/index');
-// import apiEconomyRouter from './economy/index.js';
+const apiMyPageRouter = require('./mypage/index');
 
 
 router.use('/userinfo', apiUserInfoRouter);
 router.use('/signup', apiSignUpRouter);
 router.use('/login', apiLoginRouter);
-// router.use('/economy', apiEconomyRouter);
+router.all('/mypage', apiMyPageRouter);
 
 module.exports = router;
