@@ -9,6 +9,6 @@ const apiMyPageRouter = require('./mypage/index');
 router.use('/userinfo', apiUserInfoRouter);
 router.use('/signup', apiSignUpRouter);
 router.use('/login', apiLoginRouter);
-router.all('/mypage', apiMyPageRouter);
+router.use('/mypage', apiMyPageRouter);
 
 module.exports = router;
