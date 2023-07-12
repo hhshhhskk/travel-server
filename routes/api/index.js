@@ -4,9 +4,11 @@ const apiUserInfoRouter = require('./userinfo/index');
 const apiSignUpRouter = require('./signup/index');
 const apiLoginRouter = require('./login/index');
 const apiMyPageRouter = require('./mypage/index');
+const apiWishListRouter = require('./wishlist/index');
 
 
 router.use('/userinfo', apiUserInfoRouter);
+router.use('/wishlist', apiWishListRouter);
 router.use('/signup', apiSignUpRouter);
 router.use('/login', apiLoginRouter);
 router.use('/mypage', apiMyPageRouter);

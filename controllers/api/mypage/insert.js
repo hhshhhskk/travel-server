@@ -4,13 +4,13 @@ const db = require('../../../config/database');
 
 function handler(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
-    const { id, wishlist_id } = req.body;
+    const { id, contentid, title } = req.body;
 
-    db.query(`INSERT INTO mypage (id, wishlist_id) VALUES ("${id}", "${wishlist_id}")`, function (err, rows) {
+    db.query(`INSERT INTO mypage (id, wishlist_id, title) VALUES ("${id}", "${contentid}", "${title}")`, function (err, rows) {
         if (err) {
           console.log(err);
         } else {
-          res.json({ status: '성공', message: `${wishlist_id} 를 찜목록에 추가 하였습니다.` })
+          res.json({ status: '성공', message: `${contentid}을 찜목록에 추가 하였습니다.` })
           return;
         }
       });
