@@ -7,6 +7,8 @@ const apiMyPageRouter = require('./mypage/index');
 const apiWishListRouter = require('./wishlist/index');
 const apiSignOutRouter = require('./signout/index');
 
+const apiChatGptRouter = require('./chatGpt/index');
+
 
 router.use('/userinfo', apiUserInfoRouter);
 router.use('/wishlist', apiWishListRouter);
@@ -14,5 +16,6 @@ router.use('/signup', apiSignUpRouter);
 router.use('/login', apiLoginRouter);
 router.use('/mypage', apiMyPageRouter);
 router.use('/signout', apiSignOutRouter);
+router.use('/chatgpt', apiChatGptRouter);
 
 module.exports = router;
