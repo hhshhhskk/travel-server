@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# API_KEY
+.env
+
 # misc
 .DS_Store
 .env.local
